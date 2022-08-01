@@ -1,0 +1,11 @@
+[Unit]
+Description=ELA-Daemon
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/ela-daemon
+
+[Install]
+WantedBy=multi-user.target
