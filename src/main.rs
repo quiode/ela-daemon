@@ -12,7 +12,10 @@ async fn send_ping(domain: &str, uuid: &str) {
 
     let client = reqwest::Client::new();
 
-    client.post(&url).send().await.ok();
+    match client.post(&url).send().await {
+        Ok(_) => println!("ok!"),
+        Err(x) => println!("{}", x),
+    }
 }
 
 #[tokio::main]
